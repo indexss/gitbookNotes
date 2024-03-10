@@ -2,7 +2,7 @@
 description: Week 1 主要介绍了一下这门课要讲什么。
 ---
 
-# Week 1 - Intro
+# Week 1 - Intro to Security
 
 {% hint style="info" %}
 Rishi在课上给了一个取模算法 (Modular Arithmetic) 的例子。
@@ -66,7 +66,7 @@ Phishing 钓鱼
 
 ### file system:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### 应知应会command
 
