@@ -24,7 +24,13 @@ A hash of any message is a short string generated from that message.
 ### 对Hash的攻击
 
 1. Preimage attack: 前像攻击，碰运气找一个M，使得Hash(M) == 被Hash的原文。几乎不可能实现
-2. Collision attack: 找两个不同的信息，拥有相同Hash值
+2.  Collision attack: 找两个不同的信息，拥有相同Hash值。
+
+    对于一个安全的Hash，如果哈希出n位，那么应该计算2^n/2次才能找到碰撞。
+
+    推导：
+
+    <figure><img src="../.gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
 3.  Prefix collision attack:&#x20;
 
     攻击者可以选择两个不同的前缀p1和p2,然后附在不同的字符串m1,m2前面，那么有：
@@ -101,9 +107,13 @@ CBC MAC：
 
 <figure><img src="../.gitbook/assets/image (6).png" alt="" width="563"><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/image (15).png" alt="" width="563"><figcaption></figcaption></figure>
+
 Hash MAC:
 
 <figure><img src="../.gitbook/assets/image (5).png" alt="" width="375"><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (16).png" alt="" width="188"><figcaption></figcaption></figure>
 
 ### Broken Hash to MAC 用CBC MAC替换垃圾的Hash MAC
 
@@ -123,8 +133,10 @@ Hash MAC:
 
 CCM全称为CTR with CBC-MAC，CCM不复杂，但被证实是安全的。过程如下：
 
-1. 用ARS CBC生成MAC
-2. 原文拼接MAC，使用与MAC相同的key进行CTR加密。
+1. 用AES CBC生成MAC（Tag）
+2. 原文P并行通过CTR加密，等Tag算好后也用CTR加密，由于CTR可以并行执行，所以把密文拼接起来就行。
+
+<figure><img src="../.gitbook/assets/image (14).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ## Access Control
 
@@ -144,8 +156,67 @@ UNIX中的ACL：
 
 <figure><img src="../.gitbook/assets/image (9).png" alt="" width="563"><figcaption></figcaption></figure>
 
-权限指示符含义：\
+目录权限指示符含义：\
 
 
 <figure><img src="../.gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
+
+程序指示符：
+
+有时会看到s。
+
+<figure><img src="../.gitbook/assets/image (11).png" alt="" width="563"><figcaption></figcaption></figure>
+
+在主人运行位上的s是setuid，运行该程序的人会在程序运行的时候以主人的身份运行。
+
+在组运行位的s是setgid，不是以启动它的用户所属组的权限运行，而是以拥有该文件的组运行。换句话说，进程的 `gid` 与文件的 `gid` 相同。
+
+### 不同的用户指示符
+
+对于进程的PCB，里面会存着这样的uid：
+
+* real uid : ruid, 所有者的uid
+* effective uid: euid, 运行者的uid。一般与root不同，但是如果程序有setuid位，那么euid = ruid。euid设定了除访问文件系统外其他内容的访问权限，而对文件系统的权限，由fsuid设定。
+* file system uid: fsuid, 决定了一个进程在尝试访问文件系统中的文件或目录时，系统如何评估该进程的权限。一般与euid相同。
+* saved user uid: suid, 当euid被更改时，旧的euid会被保存为suid。非特权进程只能把euid改为ruid或者suid。
+
+### 授予更高权限的危险
+
+1. 用户能够运行更高权限的进程
+2. 如果passwd程序中有编程错误，那么可以使用root权限进行计算机操控
+3. 竞态条件问题：在检查“是否能被访问”和“实际访问”期间，如果文件的权限被修改，或者文件本身被修改（如assignment 1中的链接），那么就可能导致危险行为
+
+原则：Principle of Least Privilege.
+
+## Storing Password
+
+密码不以明文存储，而是以哈希后密文存储。
+
+更进一步，会存储(Salt, Hash)，其中Salt是盐值，Hash是原文和Salt的哈希值。这样，同密码的两个用户就会有不同的哈希值。
+
+### Windows密码哈希
+
+windows将密码哈希存储在system32/config/SAM，这个文件要Admin等级才能阅读，这个文件被另一个key加密。
+
+由于Windows采用密码哈希的缓存与SAM对比进行密码校验，就会产生危险。攻击流程为：通过某种方式获得一个普通用户的账号密码，然后使用windows的漏洞进行越权，变为admin，然后就把windows管理员的密码哈希文件传给自己。这样就可以通过这个缓存文件登录管理员账号了。
+
+也可以用Linux启动电脑，然后窃取SAM文件
+
+### 密码窃取与保护措施
+
+1. 用户名和密码可能会被钓鱼。最好的防护方法：
+   1. 多因素认证: multi-factor authentication
+   2. 公钥认证
+2. 密码注入：通过拿到硬盘找到密码文件，注入自己的hash。
+   1. 全盘加密
+3.  电池安全：BIOS权限很大，通过蛮力破解BIOS密码几乎不可能，但扣掉电池可以重设密码。
+
+    <figure><img src="../.gitbook/assets/image (12).png" alt="" width="375"><figcaption></figcaption></figure>
+
+总解决方法：
+
+1. 为重要文件加密
+2. 全盘加密，但有问题，key可以被brute force，且在休眠状态不安全。
+
+
 
