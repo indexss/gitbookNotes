@@ -16,11 +16,21 @@ You can also come and check out my [blog](https://me.linlishi.xyz/blog) to learn
 
 ### Quick link for the classes in this year:
 
+{% content-ref url="30195-security-and-networks.md" %}
+[30195-security-and-networks.md](30195-security-and-networks.md)
+{% endcontent-ref %}
 
+{% content-ref url="34255-artificial-intelligence-2.md" %}
+[34255-artificial-intelligence-2.md](34255-artificial-intelligence-2.md)
+{% endcontent-ref %}
 
+{% content-ref url="38059-operating-systems-and-systems-programming.md" %}
+[38059-operating-systems-and-systems-programming.md](38059-operating-systems-and-systems-programming.md)
+{% endcontent-ref %}
 
-
-
+{% content-ref url="26263-team-project.md" %}
+[26263-team-project.md](26263-team-project.md)
+{% endcontent-ref %}
 
 ## 介绍
 
