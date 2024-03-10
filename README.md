@@ -16,8 +16,8 @@ You can also come and check out my [blog](https://me.linlishi.xyz/blog) to learn
 
 ### Quick link for the classes in this year:
 
-{% content-ref url="30195-security-and-networks.md" %}
-[30195-security-and-networks.md](30195-security-and-networks.md)
+{% content-ref url="30195-security-and-networks/" %}
+[30195-security-and-networks](30195-security-and-networks/)
 {% endcontent-ref %}
 
 {% content-ref url="34255-artificial-intelligence-2.md" %}
