@@ -2,7 +2,7 @@
 description: 本周内容比较多，但多数为intro类型
 ---
 
-# Week 2 - Hash, MACs, Encryption Intro, Access Control
+# Copy of Week 2 - Hash, MACs, Encryption Intro, Access Control
 
 {% hint style="info" %}
 目前，通过密钥分发协议和对称加密可以保证密钥是安全的，但是我们仍需要检测ciphertext manipulation。这时候，Hash，MACs和Authenticated Encryption就可以解决问题。
