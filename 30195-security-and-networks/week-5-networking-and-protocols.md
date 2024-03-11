@@ -60,11 +60,15 @@ Nonce应该与明文被一同加密，不然可能会被替换重放：
 
 <figure><img src="../.gitbook/assets/image (31).png" alt="" width="563"><figcaption></figcaption></figure>
 
-### Session Key Establishment Protocol
+## Session Key Establishment Protocol
 
 前面例子的前提是AB已经共享了一个session key，而在现实中，双方应当使用Key Establishment protocol来确定双方的session key。更进一步，双方都希望对方是真实的对方，所以使用对方的publickey来确定对方身份，public key可以由Trusted Third Party提供
 
-#### Needham-Schroeder Public Key Protocol
+### Needham-Schroeder Public Key Protocol
+
+{% hint style="info" %}
+传统的NS协议通过每次session都运行一遍保证了Fresh Key，但由于存在MitM攻击所以不满足Key Exclusivity，由于EB EA分别加密Nonce保证了Far end Operative，由于第二步没有加B的身份信息所以不满足Once Authentication。
+{% endhint %}
 
 前提：AB双方知道对方的public key, Na Nb可以用来被生成对称的session key
 
@@ -80,6 +84,10 @@ Nonce应该与明文被一同加密，不然可能会被替换重放：
 
 <figure><img src="../.gitbook/assets/image (42).png" alt="" width="375"><figcaption></figcaption></figure>
 
+NS协议默认A B的公钥是已知的，完正的NS协议需要把证书交换公钥考虑进去。S为TTP，Kas Kbs是A和B在服务注册时就与S确定的对称密钥。前两步是用来确定Kab这个长期密钥的。有了Kab后，AB双方就可以只进行3 4 5步确认身份后就可以开始通信了。之后M用Kab加密。<mark style="color:red;">注意，改进后的NS协议还是没有Forward Secrecy。</mark>
+
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure>
+
 ### Forward Secrecy
 
 Forward Secercy，前向安全。在某些地区，政府可以合法强迫你交出private key，前向安全保证了在你交出了private key时，这个时刻记为t，则你在t之前所有加密的信息都不该被破译。
@@ -92,5 +100,33 @@ Forward Secercy，前向安全。在某些地区，政府可以合法强迫你�
 
 <figure><img src="../.gitbook/assets/image (43).png" alt="" width="375"><figcaption></figcaption></figure>
 
-事前A知道x，B知道y，而时候x, y, g^xy都不被存储，这样就维持了前向安全性。
+事前A知道x，B知道y，而事后x, y, g^xy都不被存储，这样就维持了前向安全性。
+
+但有问题，因为检查签名是需要公钥的，但是公钥A是不知道的，所以Full STS是这样的：
+
+<figure><img src="../.gitbook/assets/image.png" alt="" width="375"><figcaption></figcaption></figure>
+
+### Certificates
+
+前面都假设AB互相知道对方的公钥，但实际上是不知道的。除了面对面线下交换，也可以使用Trusted thied party(TTP)来对他们的身份与密钥签名，也就是证书。
+
+### Hierarchy of Goals
+
+#### Key Establishment Goals ── **Good Key**:
+
+* **Key Freshness**: the key established is new (either from some trusted third party or because it uses a new nonce). 新鲜性，必须是新的
+* **Key Exclusivity**: the key is only known to the principals in the protocol.  专有性，只有双方知道
+
+#### Authentication Goals ── Entity Authentication:&#x20;
+
+* **Far-end Operative**: A knows that “B” is currently active. 通常通过A给B发一个Na，B返回Na的签名来保证。
+* **Once Authentication**: A knows that B wishes to communicate with A. A知道B想交流的人就是A不是别人，通常通过把Na和A一起放到签名里来保证。
+
+#### Highest Goal: Mutual Belief in key K for A and B
+
+* B can make sure that K is a good Key with A. B知道A觉得K是好的密钥
+* A knows B wants to communicate with A using K.  A知道B想和A用K交流
+* A knows B thinks K is a good key for B. A知道B觉得K是好的密钥
+
+<figure><img src="../.gitbook/assets/image (2).png" alt="" width="563"><figcaption></figcaption></figure>
 
