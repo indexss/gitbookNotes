@@ -76,3 +76,21 @@ Nonce应该与明文被一同加密，不然可能会被替换重放：
 
 <figure><img src="../.gitbook/assets/image (38).png" alt="" width="375"><figcaption></figcaption></figure>
 
+改进十分简单，在第二步加入身份，这样A就能即时知道他交流的对象不是E而是B了：
+
+<figure><img src="../.gitbook/assets/image (42).png" alt="" width="375"><figcaption></figcaption></figure>
+
+### Forward Secrecy
+
+Forward Secercy，前向安全。在某些地区，政府可以合法强迫你交出private key，前向安全保证了在你交出了private key时，这个时刻记为t，则你在t之前所有加密的信息都不该被破译。
+
+显然NS协议并不具有前向安全性，因为当AB的私钥被交出后，每个session使用的Na, Nb也会被破译，接着key(Na, Nb)也就被破译了，M也就被挖出了。
+
+#### Statin-to-Station Protocol
+
+站对站协议具有前向安全性。S代表签名
+
+<figure><img src="../.gitbook/assets/image (43).png" alt="" width="375"><figcaption></figcaption></figure>
+
+事前A知道x，B知道y，而时候x, y, g^xy都不被存储，这样就维持了前向安全性。
+
