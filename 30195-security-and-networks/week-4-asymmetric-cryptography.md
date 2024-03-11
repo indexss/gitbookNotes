@@ -99,5 +99,42 @@ Diffie-Hellman只有在只能被窃听的不可靠信道上才是安全的，如
 
 ## RSA Encryption
 
+最流行的公钥加密算法，1977年被发明，在TLS和PKI中广泛运用
+
+<figure><img src="../.gitbook/assets/image (18).png" alt="" width="563"><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (19).png" alt="" width="563"><figcaption></figcaption></figure>
+
+### RSA流程
+
+RSA包括了(Gen, Enc, Dec)
+
+* Gen函数接收一个安全参数λ，作为一个超参数
+  * 准备两个素数p和q，bit size均为λ
+  * N = pq, Φ(N) = (p-1)(q-1), 为小于N的正整数中与N互质的数的个数。这个函数叫[欧拉函数](https://zhuanlan.zhihu.com/p/151756874)。
+  * 取一个e，满足两个条件，1\<e<Φ(N) ，e和Φ(N)互质
+  * $$Z^{*}_{N} = \{0<x<N,\ gcd(x,N)=1\}$$，这个在加密和解密中有用
+  * 取一个d，满足ed mod Φ(N) = 1
+  * 结束，public key为(e, N)，private key为(e, d, N)
+* Enc函数是加密函数
+  * m是明文，且在 $$Z^{*}_{N}$$中（hint中说明了这一点），并拿到PK = (e,N)，那么密文c = m^e(mod N)
+* Dec函数是解密函数
+  * 私钥为SK = (e,d,N) 密文刚拿到了，也在 $$Z^{*}_{N}$$中，原文m = c^d(mod N)
+
+{% hint style="info" %}
+m一定属于 $$Z^{*}_{N}$$，等价于m小于N且与N互质，而N是由pq相乘得来的。第一个条件，m小于N很好满足，只要让pq足够大，N就会巨大无比，这样就满足m小于N。而m与N互质，是必定的，因为p q都是质数，所以在小于N，大于1的范围内，除了p q本身，就都与N互质，所以只要保证m不等于p q就没事。
+{% endhint %}
+
+### RSA例子
+
+p = 3, q = 11, N = 33 Φ(N) = 2\*10 = 20\
+e取7, d取3，PK = (e=7, N=33) SK  = (e=7, d=3, N=33)\
+注意到Z\*N如图：
+
+<figure><img src="../.gitbook/assets/image (20).png" alt="" width="375"><figcaption></figcaption></figure>
+
+假设明文m = 4，c=4^7 mod 33 = 16\
+而解密 m = 16^3 mod 33 = 4，对的上
+
 
 
