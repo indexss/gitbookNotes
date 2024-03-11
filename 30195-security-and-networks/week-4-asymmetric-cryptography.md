@@ -26,7 +26,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 加密和解密用同一个key，就是对称加密，但是，像下图的情况，就需要很多个key，具体来说，每个人需要维护n-1把key，总共需要n(n-1)/2把：
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Asymmetric Encryption: Public Key Encryption
 
@@ -38,7 +38,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 公钥加密流程：
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 现在，n个人的交流，只需要维持n个公钥和n个私钥
 
@@ -68,7 +68,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 ### Diffie-Hellman Key Exchange
 
-<figure><img src="../.gitbook/assets/image.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 流程描述：
 
@@ -82,4 +82,12 @@ description: 介绍了非对称加密，以及公钥加密。
 
 窃听者无法得知g^ab，因为窃听者能看到g^a，g^b，g，p，但是由于对数计算十分困难，而g和p一般取的都很大，实际上无法从g^a 和 g反推出a的值，b也是一样，所以窃听者无法得到g^ab
 {% endhint %}
+
+#### 对Diffie-Hellman Key Exchange 的攻击：MitM
+
+Diffie-Hellman只有在只能被窃听的不可靠信道上才是安全的，如果这个信道上的信息可以被拦截，修改，那么就可以对其实施Man in the Middle攻击。
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+可以看到，在Alice和Bob中间插个人是对Alice和Bob透明的，Adversary有g^ac mod p 和 g^bd mod p，相当于把两个双面锁箱连接到了一起，Alice和Bob无法察觉信息已经被盗取。
 
