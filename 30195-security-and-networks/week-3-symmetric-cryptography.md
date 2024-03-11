@@ -111,13 +111,13 @@ AES过程：
 
 ### DES
 
-Data Encryption Standard，是旧标准，由IBM在1970年代设计。S-boxes是一种替换方法，而我们不知道NSA是否给S-boxes加了这种替换，有人认为这是NSA给自己留的后门。
+Data Encryption Standard，是旧标准，由IBM在1970年代设计。S-boxes是一种替换方法，而我们不知道NSA是否给S-boxes加了这种替换，有人认为这是NSA给自己留的后门。IP和IP-1在密码学上别没有意义。
 
 <figure><img src="../.gitbook/assets/image (14).png" alt="" width="263"><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (16).png" alt="" width="322"><figcaption></figcaption></figure>
 
-DES基于Feistel函数，见：[维基百科](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96#%E8%B2%BB%E6%96%AF%E5%A6%A5%E5%87%BD%E6%95%B0%EF%BC%88F%E5%87%BD%E6%95%B0%EF%BC%89)
+DES基于Feistel函数，也就是图中的F函数，见：[维基百科](https://zh.wikipedia.org/wiki/%E8%B3%87%E6%96%99%E5%8A%A0%E5%AF%86%E6%A8%99%E6%BA%96#%E8%B2%BB%E6%96%AF%E5%A6%A5%E5%87%BD%E6%95%B0%EF%BC%88F%E5%87%BD%E6%95%B0%EF%BC%89)
 
 现在很弱，1080Ti 15天就能破译。
 
