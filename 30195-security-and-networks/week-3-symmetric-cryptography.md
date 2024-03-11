@@ -20,7 +20,7 @@ cipher是一种不知道规则就难以从code到data的模式。
 
 ### Hex：
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### ASCII 不赘述
 
@@ -76,7 +76,7 @@ AES过程：
 
 1.  每块128bits，由4\*4矩阵表示，每个元素一个byte
 
-    <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 2.  SubBytes: S-box
@@ -149,7 +149,7 @@ PKCS 5就只能填8个byte的block，而PKCS 7就比较通用，什么块都能�
 
     每块单独加密，加密块顺序同明文块，原文块相同则密文块相同
 
-    <figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
     <figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 2.  CBC
