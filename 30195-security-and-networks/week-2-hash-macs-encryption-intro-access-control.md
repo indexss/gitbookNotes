@@ -79,7 +79,7 @@ MACs思想：use a key to ensure that message has not been changed
 
 例子：
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 可以看到，MACs实际上就是数字签名的对称加密版本。
 
@@ -93,7 +93,7 @@ Length extension attack：Add data to a MAC withoud knowing the key.
 
 #### CBC
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>CBC mode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>CBC mode</p></figcaption></figure>
 
 {% hint style="info" %}
 IV与块同长，第一个IV随机选择，不需要保密，后面的IV均为前一个的密文。
