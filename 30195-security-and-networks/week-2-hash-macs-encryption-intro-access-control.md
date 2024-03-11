@@ -79,7 +79,7 @@ MACs思想：use a key to ensure that message has not been changed
 
 例子：
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 可以看到，MACs实际上就是数字签名的对称加密版本。
 

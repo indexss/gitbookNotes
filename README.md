@@ -12,7 +12,7 @@ Currently, this site is using the official service of GitBook. I personally thin
 
 Welcome to Linli's Note. Here mainly stores some notes of Linli Shi. If you want to know more about me, please visit my [personal](https://me.linlishi.xyz/) website.&#x20;
 
-You can also come and check out my [blog](https://me.linlishi.xyz/blog) to learn about my recent research and situation. I intend to separate notes and blogs. The blog contains more interesting content about me and technology.
+You can also come and check out my [blog](https://me.linlishi.xyz/post) to learn about my recent research and situation. I intend to separate notes and blogs. The blog contains more interesting content about me and technology.
 
 ### Quick link for the classes in this year:
 
@@ -40,4 +40,4 @@ You can also come and check out my [blog](https://me.linlishi.xyz/blog) to learn
 
 欢迎来到我的笔记网站。顾名思义，这里存着我的笔记。如果你想进一步了解我，欢迎访问我的[个人网站](https://me.linlishi.xyz/)。
 
-你可以访问我的[博客](https://me.linlishi.xyz/blog)。我已有意地将博客与笔记分隔开。这里就存着学习笔记和课内笔记，博客中会有更多关于我，关于技术的有趣内容。
+你可以访问我的[博客](https://me.linlishi.xyz/post)。我已有意地将博客与笔记分隔开。这里就存着学习笔记和课内笔记，博客中会有更多关于我，关于技术的有趣内容。

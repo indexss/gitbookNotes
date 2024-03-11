@@ -26,7 +26,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 加密和解密用同一个key，就是对称加密，但是，像下图的情况，就需要很多个key，具体来说，每个人需要维护n-1把key，总共需要n(n-1)/2把：
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Asymmetric Encryption: Public Key Encryption
 
@@ -38,7 +38,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 公钥加密流程：
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 现在，n个人的交流，只需要维持n个公钥和n个私钥
 
@@ -46,7 +46,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 由于公钥私钥可以互相加解密，所以可以利用这一特性签名：
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 签名者用私钥签名，校对者用公钥检查看文档是否被修改，从而判定是否接受这份文件。
 
@@ -68,7 +68,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 ### Diffie-Hellman Key Exchange
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 流程描述：
 
@@ -87,7 +87,7 @@ description: 介绍了非对称加密，以及公钥加密。
 
 Diffie-Hellman只有在只能被窃听的不可靠信道上才是安全的，如果这个信道上的信息可以被拦截，修改，那么就可以对其实施Man in the Middle攻击。
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 可以看到，在Alice和Bob中间插个人是对Alice和Bob透明的，Adversary有g^ac mod p 和 g^bd mod p，相当于把两个双面锁箱连接到了一起，Alice和Bob无法察觉信息已经被盗取。
 
@@ -115,14 +115,14 @@ RSA包括了(Gen, Enc, Dec)
   * 取一个e，满足两个条件，1\<e<Φ(N) ，e和Φ(N)互质
   * $$Z^{*}_{N} = \{0<x<N,\ gcd(x,N)=1\}$$，这个在加密和解密中有用
   * 取一个d，满足ed mod Φ(N) = 1
-  * 结束，public key为(e, N)，private key为(e, d, N)
+  * 结束，public key为(e, N)，private key为(e, d, N) <mark style="color:red;">（有的版本中没有e，因为e不必要）</mark>
 * Enc函数是加密函数
   * m是明文，且在 $$Z^{*}_{N}$$中（hint中说明了这一点），并拿到PK = (e,N)，那么密文c = m^e(mod N)
-* Dec函数是解密函数
+* Dec函数是解密函数 <mark style="color:red;">（有的版本中没有e，因为e不必要）</mark>
   * 私钥为SK = (e,d,N) 密文刚拿到了，也在 $$Z^{*}_{N}$$中，原文m = c^d(mod N)
 
 {% hint style="info" %}
-m一定属于 $$Z^{*}_{N}$$，等价于m小于N且与N互质，而N是由pq相乘得来的。第一个条件，m小于N很好满足，只要让pq足够大，N就会巨大无比，这样就满足m小于N。而m与N互质，是必定的，因为p q都是质数，所以在小于N，大于1的范围内，除了p q本身，就都与N互质，所以只要保证m不等于p q就没事。
+m一定属于 $$Z^{*}_{N}$$，等价于m小于N且与N互质，而N是由pq相乘得来的。第一个条件，m小于N很好满足，只要让pq足够大，N就会巨大无比，这样就满足m小于N。而m与N互质，是必定的，因为p q都是质数，所以在小于N，大于1的范围内，除了p q本身，就都与N互质，所以只要保证m不等于p q就没事。Eike说[维基百科](https://en.wikipedia.org/wiki/RSA\_\(cryptosystem\)#Operation)上写着，m\<N都能工作，给维基找错了属于是。
 {% endhint %}
 
 ### RSA例子
@@ -136,5 +136,43 @@ e取7, d取3，PK = (e=7, N=33) SK  = (e=7, d=3, N=33)\
 假设明文m = 4，c=4^7 mod 33 = 16\
 而解密 m = 16^3 mod 33 = 4，对的上
 
+## Digital Signatures
 
+数字签名的目标是防伪，和真实的签名一样，我签过名的东西，如果你修改，是可以不承认的。
+
+真实签名，是添加一段有关作者的信息到文件上，验证过程是public的。
+
+前面说过Authenticated Encryption算是对称加密版本的数字签名，其缺点就是，由于MAC（Tag）是用AES CBC生成的，public无法验证其真实性，只有有对称密钥的人才能验证。而数字签名不是。
+
+### 数字签名大体流程
+
+<figure><img src="../.gitbook/assets/image.png" alt="" width="563"><figcaption></figcaption></figure>
+
+自然语言描述一下，1^k中的k相当于我们前面说的λ，超参数，生成公私钥。Sign函数通过拿到原文M，用私钥解密生成一个签名σ，附加到M后。
+
+别人拿到附有签名的信息，用公钥加密信息（私钥解密的反函数），看内容是否和M相同，如果与M相同，说明未被篡改，如果不同就说明被篡改了。
+
+### 数字签名模式设计：RSA Full Domain Hash
+
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
+
+* 需要一个公共哈希函数H，可以把一串内容哈希到小于N且与N互质的数组内。
+* key的生成就是用RSA的生成函数，pk = (e,N), sk = (d,N)
+* Sign的过程就是得到σ的过程，就是用RSA的私钥进行解密，注意，私钥解密与公钥加密是反函数。
+* 验证，公钥加密，将上面的过程逆处理，如果得到的σ与H(M)相同，则接收，反之则拒绝。
+
+## Saving a Key
+
+直接把密钥写到一个文件里不是一个好习惯。我们希望，保护private key的读的权限，并确保public key是真实的。
+
+### Java中的密码存储
+
+KeyStore类提供了一个受密码保护的密钥与证书存储容器类。在硬盘上以KeyStore文件的形式存储。
+
+多数java程序不创建新的key，而是使用KeyStore中已经存在的key，因为生成key需要一定的安全环境，且算力需求比较高。这样可以减少复杂性
+
+JDK自带了一个shell命令keytool，可以在java外，命令行直接对密钥进行管理。
+
+* 可以创建新的密钥对（公钥和私钥），生成证书请求，导入证书，以及管理`KeyStore`文件。
+* 生成密钥后，这些密钥可以被导入到`KeyStore`中，并被Java程序用于加密、解密和其他安全操作。
 
