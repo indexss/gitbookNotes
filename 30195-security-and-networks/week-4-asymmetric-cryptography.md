@@ -91,3 +91,13 @@ Diffie-Hellman只有在只能被窃听的不可靠信道上才是安全的，如
 
 可以看到，在Alice和Bob中间插个人是对Alice和Bob透明的，Adversary有g^ac mod p 和 g^bd mod p，相当于把两个双面锁箱连接到了一起，Alice和Bob无法察觉信息已经被盗取。
 
+#### 如何解决MitM攻击？
+
+#### Basic Idea: Authenticating Public Key. Requirement: Trusted Third Party: Certification Authority (CA).
+
+
+
+## RSA Encryption
+
+
+
