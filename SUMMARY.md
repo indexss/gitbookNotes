@@ -10,6 +10,7 @@
   * [Week 6 - TLS & Tor](30195-security-and-networks/week-6-tls-and-tor.md)
   * [Week 7 - Web Attacks Part 1](30195-security-and-networks/week-7-web-attacks-part-1.md)
   * [Week 8 - Web Attacks Part 2](30195-security-and-networks/week-8-web-attacks-part-2.md)
+  * [Week 9 - Reverse Engineering](30195-security-and-networks/week-9-reverse-engineering.md)
 * [🤖 \[34255\] Artificial Intelligence 2](34255-artificial-intelligence-2.md)
 * [🐧 \[38059\] Operating Systems and Systems Programming](38059-operating-systems-and-systems-programming.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
