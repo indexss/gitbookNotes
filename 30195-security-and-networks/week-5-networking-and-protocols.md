@@ -86,7 +86,7 @@ Nonce应该与明文被一同加密，不然可能会被替换重放：
 
 NS协议默认A B的公钥是已知的，完正的NS协议需要把证书交换公钥考虑进去。S为TTP，Kas Kbs是A和B在服务注册时就与S确定的对称密钥。前两步是用来确定Kab这个长期密钥的。有了Kab后，AB双方就可以只进行3 4 5步确认身份后就可以开始通信了。之后M用Kab加密。<mark style="color:red;">注意，改进后的NS协议还是没有Forward Secrecy。</mark>
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Forward Secrecy
 
@@ -128,5 +128,5 @@ Forward Secercy，前向安全。在某些地区，政府可以合法强迫你�
 * A knows B wants to communicate with A using K.  A知道B想和A用K交流
 * A knows B thinks K is a good key for B. A知道B觉得K是好的密钥
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
