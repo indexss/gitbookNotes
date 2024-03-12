@@ -108,6 +108,6 @@ Tor协议本身是安全的，但是并不代表你使用了Tor你就安全了�
 
 例：FBI仍旧可以攻击罪犯服务器，植入恶意软件来攻破你的网站
 
-例：用户ISP和被威胁的ISP不能相同，见[哈佛虚假炸弹案](../)。
+例：用户ISP和被威胁的ISP不能相同，见[哈佛虚假炸弹案](https://arstechnica.com/information-technology/2013/12/use-of-tor-helped-fbi-finger-bomb-hoax-suspect/)。
 
 例：卫报开发的[Securedrop](https://www.theguardian.com/securedrop)使用Tor来保证新闻线索提供人的匿名性，但仍有安全隐患。
