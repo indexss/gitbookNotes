@@ -14,3 +14,5 @@
 * [🤖 \[34255\] Artificial Intelligence 2](34255-artificial-intelligence-2.md)
 * [🐧 \[38059\] Operating Systems and Systems Programming](38059-operating-systems-and-systems-programming.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
+* [📜 Paper Reading](paper-reading/README.md)
+  * [🔴 Towards End-to-end Video-based Eye-Tracking](paper-reading/towards-end-to-end-video-based-eye-tracking.md)
