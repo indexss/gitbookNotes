@@ -24,8 +24,8 @@ You can also come and check out my [blog](https://me.linlishi.xyz/post) to learn
 [34255-artificial-intelligence-2.md](34255-artificial-intelligence-2.md)
 {% endcontent-ref %}
 
-{% content-ref url="38059-operating-systems-and-systems-programming.md" %}
-[38059-operating-systems-and-systems-programming.md](38059-operating-systems-and-systems-programming.md)
+{% content-ref url="38059-operating-systems-and-systems-programming/" %}
+[38059-operating-systems-and-systems-programming](38059-operating-systems-and-systems-programming/)
 {% endcontent-ref %}
 
 {% content-ref url="26263-team-project.md" %}
