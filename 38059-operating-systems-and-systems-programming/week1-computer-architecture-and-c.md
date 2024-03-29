@@ -100,4 +100,75 @@ I/O用来接收和发送来自连接设备的信息。链接的设备（monitor,
 7. CU指挥ALU进行减操作，得到d
 8. CU将ALU中计算得到的d发送到外围设备display
 
+### C Program
+
+由于作者比较熟悉这一块，很大部分内容都会被省略。具体内容请参考课堂slides
+
+```
+ char c = 'A', d;
+```
+
+这种写法中，d是un-initialized，包含garbage value initially。
+
+***
+
+Array size必须是constant，否则会causes malfunction
+
+```
+ int array_size;
+ ... // user input
+ int a[array_size] // 这样会报错
+ ​
+ //  ----------------
+   
+ int array_size = 4; //这样不会报错 
+  
+```
+
+***
+
+二维数组在内存中的映射关系
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240328071659493.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+字符串最后有\0
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240328080036352.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+strcpy(dest, src) - copy a string strcat(str, "abc") - concatenate two strings strlen(str) - get string length strcmp(str1, str2) - compare two strings
+
+***
+
+<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+
+***
+
+A byte consists of 2 Hex digits
+
+a digit is called bit.
+
+***
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240330005533715.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240330005632725.png" alt="" width="375"><figcaption></figcaption></figure>
+
+因为地址是8 bytes
+
+***
+
+**栈**用于存储函数的局部变量和上下文，它的操作是自动的；而**堆**用于存储程序运行时动态分配的内存，需要程序员手动管理。
+
+***
+
+char \*ptr = "Comp Sc"; 在只读数据段，不能修改
+
+char arr\[] = "Comp Sc"; 在堆或者数据段，可以修改
+
 \
