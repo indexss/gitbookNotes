@@ -159,3 +159,71 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 不要对一个地址双重释放两次，不然会崩溃。因为在可用blocks中，会出现两个p1。
 
 <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331232724419.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+### Struct
+
+typedef定义shortcut
+
+![image-20240331233302725](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331233302725.png)
+
+***
+
+s -> x is a shortcut for (\*s).x
+
+```
+ struct list_t {
+  int elem;
+  struct list *next;
+ }
+ myList = malloc(sizeof (struct list_t));
+ myList→elem = 4;
+ tmp = malloc(sizeof (struct list_t));
+ tmp→elem = 5;
+ myList→next = tmp;
+ tmp→next = NULL; // indicates end of list
+```
+
+***
+
+### Safe Strings
+
+所有直接将用户输入存储为字符串的函数都存在潜在的安全风险，因为字符串的长度是未知的，不应该使用。例如：scanf "%s" 和 gets。
+
+```
+ #include <stdio.h>
+ #include <string.h>
+ int main () {
+   char src[40];
+   char dest[100];
+   printf ("Enter source string: ");
+   fgets(src, 40, stdin);
+ ​
+   strcpy(dest, src);
+   printf ("Destination string: %s", dest);
+   return 0;
+ }
+```
+
+```
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+ int main () {
+   char *str = NULL;
+   size_t n = 0;
+   //缓冲大小
+   int res;
+   printf ("Enter source string: ");
+   res = getline(&str, &n, stdin);
+   if (res == -1) {
+     printf ("Could not read from terminal, exiting\n");
+     exit(1);
+   }
+   printf ("Length is %ld\n", strlen(str));
+   return 0;
+ }
+```
+
+\

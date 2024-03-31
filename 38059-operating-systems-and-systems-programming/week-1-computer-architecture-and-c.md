@@ -1,4 +1,4 @@
-# Week1 Computer Architecture & C
+# Week 1 - Computer Architecture & C
 
 ### 冯·诺伊曼系统
 
@@ -170,5 +170,74 @@ a digit is called bit.
 char \*ptr = "Comp Sc"; 在只读数据段，不能修改
 
 char arr\[] = "Comp Sc"; 在堆或者数据段，可以修改
+
+***
+
+### Practice Problems
+
+![](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331234344713.png)
+
+> 1.2. use the I/O interfaces to store a value in the registers.
+>
+> 3. uses the ALU to compute the sum and stores the result in the register c.
+> 4. stores the value of the register c in main memory.
+> 5. uses the ALU to compute the difference and stores in the register d.
+> 6. uses the I/O interfaces to print the value of d.
+
+![image-20240331234541473](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331234541473.png)
+
+> Acces to registers inside the CPU is much faster than main mem- ory. You may save read and write-access to memory by using registers which is accessed frequently. The instructions given in the first ques-tion are an example: the registers a and b are used several times, saving memory access time.
+>
+> CPU内部寄存器的访问速度比主存储器快得多。您可以通过使用频繁访问的寄存器来节省对内存的读写访问。
+>
+> 第一个问题中给出的指令是一个例子：寄存器a和b被多次使用，从而节省了内存访问时间。
+
+![image-20240331234711774](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331234711774.png)
+
+> Pointer store memory address.
+
+![image-20240331234756133](file:///Users/linlishi/Library/Application%20Support/typora-user-images/image-20240331234756133.png?lastModify=1711900546)
+
+> Pointer and arrays can be transfered each other. The name of the array is a Pointer that point the address of the 1st unit. If you allocated an array by using pointer, you can also visit the i th unit by using \*(p+i).
+
+![image-20240331235013731](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331235013731.png)
+
+> Conclusion: swap the value the pointer px and pointer py pointed to.
+
+6. What will be the output of this program?
+
+```
+ int main () {
+   float arr[5] = {12.5,10.0,13.5,90.5,0.5};
+   float *ptr1 = &arr[0];
+   float *ptr2 = ptr1 + 3;
+   printf ("%f\n", *ptr2);
+   printf ("%ld\n", ptr2 - ptr1);
+   return 0;
+ }
+```
+
+90.5
+
+3
+
+![image-20240331235334187](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331235334187.png)
+
+> 2, 1
+
+![image-20240331235431728](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331235431728.png)
+
+> String is stored as a continuous array of char in memory, 13bytes totle, 12 for hello world! and 1 for \0
+
+![image-20240331235649723](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331235649723.png)
+
+> Copy t string into s.
+
+![image-20240331235750797](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240331235750797.png)
+
+> the same with 9
+
+\
+
 
 \
