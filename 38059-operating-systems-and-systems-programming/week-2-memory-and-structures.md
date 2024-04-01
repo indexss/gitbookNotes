@@ -226,4 +226,82 @@ s -> x is a shortcut for (\*s).x
  }
 ```
 
+Practice Problems
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401134734718.png" alt=""><figcaption></figcaption></figure>
+
+> **Local**: The domain is within the bracket({}). In the domain, the variable is valid, out of the domain, it is invalid. The memory is allocated automatically.
+>
+> **Heap**: the memory in heap can be allocated by user and it will not be released unless user release it manually. And it's valid in. the whole program.
+>
+> **Global**: is valid in the whole program, but a local variable can be defined with the same name as global in the its domain. The memory is allocated automatically.
+>
+> **static variable**: static variable is only valid in the block but the value will be preserved. The memory is allocated automatically.
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401135521166.png" alt=""><figcaption></figcaption></figure>
+
+> 调用函数foo会创建一个包含变量a、n和i的堆栈帧。在函数foo执行完毕后，这些变量将无法访问。
+>
+> ```
+>  void foo (int *a, int n) {
+>    int i;
+>    for (i = 0; i < n; i++) {
+>      printf ("a[%d] = %d\n", i, a[i]);
+>    }
+>  }
+> ```
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401135656357.png" alt=""><figcaption></figcaption></figure>
+
+> the memory of a local variable we be released and inactive after the function excuted. So you will return an invalid memory. This behavior is unpredictable.
+>
+> ```
+>  int *foo(){
+>    int i = 4;
+>    return &i;
+>  }
+> ```
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401135926450.png" alt=""><figcaption></figcaption></figure>
+
+> if you pass by value, the function will create a new stack and make a copy for all of the value that you paseed in, so the modification on these values is invalid for the original valuable. But if you psss by reference, the modification will effect the value that stored in the corresponding address, so it will affect the original valuable.
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401140213898.png" alt=""><figcaption></figcaption></figure>
+
+> Temp is a local variable, so the problem is the sanme in Q3.
+
+6.  The following unfinished C program declares an array of four pointers in line 5. Using nested for loops with counters i and j, complete the unfinished program to construct the two-dimensional matrix
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401140331335.png" alt=""><figcaption></figcaption></figure>
+
+```
+ #include <stdio.h>
+ #include <stdlib.h>
+ int main(){
+   int i,j;
+   int *p[4];
+   for(int i = 0; i < 4; i++){
+     if(p[i] = malloc(4*sizeof(int)) == NULL){
+       fprintf(stderr, "allocate fail.\n");
+       exit(1);
+     }
+     for(j = 0; j < 4; j++) {
+       p[i][j] = 4*i + j;
+     }
+   }
+   return 0;
+ }
+```
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401140641194.png" alt=""><figcaption></figcaption></figure>
+
+> (1) the same with Q3
+>
+> (2) the p is a wild pointed.
+
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401140801886.png" alt=""><figcaption></figcaption></figure>
+
+> Definitely YES. But since after using p, the program end. It's ok.
+
+\
 \
