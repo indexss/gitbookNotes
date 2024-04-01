@@ -52,7 +52,7 @@ stdlib.h中提供了动态内存申请的函数
 
 malloc():
 
-```
+```c
  int *p;
  // Block of memory is allocated
  if((p= (int *) malloc(3*sizeof(int)))==NULL){
@@ -74,7 +74,7 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 
 可以使用valgrind来检查是否有内存泄漏问题。
 
-```
+```bash
  valgrind --leak-check=full ./a.out
 ```
 
@@ -89,7 +89,7 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 
 内存泄漏例子：
 
-```
+```c
  int main(){
    int *p1,**p2;
    p1 = malloc(sizeof(int));
@@ -106,7 +106,7 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 
 ***
 
-```
+```c
  int main(){
    int *p1,
    **p2;
@@ -123,7 +123,7 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 
 ***
 
-```
+```c
  int main(){
    int *p1,
    **p2;
@@ -140,7 +140,7 @@ Memory leak：申请了，但没有free()ed。就是内存泄露。在C中，防
 
 ***
 
-```
+```c
  int main(){
    int *p1,
    **p2;
@@ -172,7 +172,7 @@ typedef定义shortcut
 
 s -> x is a shortcut for (\*s).x
 
-```
+```c
  struct list_t {
   int elem;
   struct list *next;
@@ -191,7 +191,7 @@ s -> x is a shortcut for (\*s).x
 
 所有直接将用户输入存储为字符串的函数都存在潜在的安全风险，因为字符串的长度是未知的，不应该使用。例如：scanf "%s" 和 gets。
 
-```
+```c
  #include <stdio.h>
  #include <string.h>
  int main () {
@@ -206,7 +206,7 @@ s -> x is a shortcut for (\*s).x
  }
 ```
 
-```
+```c
  #include <stdio.h>
  #include <string.h>
  #include <stdlib.h>
@@ -242,7 +242,7 @@ Practice Problems
 
 > 调用函数foo会创建一个包含变量a、n和i的堆栈帧。在函数foo执行完毕后，这些变量将无法访问。
 >
-> ```
+> ```c
 >  void foo (int *a, int n) {
 >    int i;
 >    for (i = 0; i < n; i++) {
@@ -255,7 +255,7 @@ Practice Problems
 
 > the memory of a local variable we be released and inactive after the function excuted. So you will return an invalid memory. This behavior is unpredictable.
 >
-> ```
+> ```c
 >  int *foo(){
 >    int i = 4;
 >    return &i;
@@ -274,7 +274,7 @@ Practice Problems
 
     <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240401140331335.png" alt=""><figcaption></figcaption></figure>
 
-```
+```c
  #include <stdio.h>
  #include <stdlib.h>
  int main(){
