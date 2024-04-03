@@ -17,6 +17,7 @@
   * [Week 1 - Computer Architecture & C](38059-operating-systems-and-systems-programming/week-1-computer-architecture-and-c.md)
   * [Week 2 - Memory & Structures](38059-operating-systems-and-systems-programming/week-2-memory-and-structures.md)
   * [Week 3 - File, Function & Compile](38059-operating-systems-and-systems-programming/week-3-file-function-and-compile.md)
+  * [Week 4 - Multicore, Concurrent & Sockets](38059-operating-systems-and-systems-programming/week-4-multicore-concurrent-and-sockets.md)
 * [Page](page.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)
