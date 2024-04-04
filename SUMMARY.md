@@ -20,6 +20,7 @@
   * [Week 4 - Multicore, Concurrent & Sockets](38059-operating-systems-and-systems-programming/week-4-multicore-concurrent-and-sockets.md)
   * [Week 5 - OS Design Principles and System Calls](38059-operating-systems-and-systems-programming/week-5-os-design-principles-and-system-calls.md)
   * [Week 6 - Consolidation week](38059-operating-systems-and-systems-programming/week-6-consolidation-week.md)
+  * [Week 7 - Memory management & kernel programming](38059-operating-systems-and-systems-programming/week-7-memory-management-and-kernel-programming.md)
 * [Page](page.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)
