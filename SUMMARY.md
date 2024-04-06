@@ -22,6 +22,7 @@
   * [Week 6 - Consolidation week](38059-operating-systems-and-systems-programming/week-6-consolidation-week.md)
   * [Week 7 - Memory management & kernel programming](38059-operating-systems-and-systems-programming/week-7-memory-management-and-kernel-programming.md)
   * [Week 8 - Process](38059-operating-systems-and-systems-programming/week-8-process.md)
+  * [Week 9 - Mutual Exclusion for Cooperating Processes](38059-operating-systems-and-systems-programming/week-9-mutual-exclusion-for-cooperating-processes.md)
 * [Page](page.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)
