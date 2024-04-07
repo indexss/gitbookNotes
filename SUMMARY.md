@@ -23,6 +23,7 @@
   * [Week 7 - Memory management & kernel programming](38059-operating-systems-and-systems-programming/week-7-memory-management-and-kernel-programming.md)
   * [Week 8 - Process](38059-operating-systems-and-systems-programming/week-8-process.md)
   * [Week 9 - Mutual Exclusion for Cooperating Processes](38059-operating-systems-and-systems-programming/week-9-mutual-exclusion-for-cooperating-processes.md)
+  * [Week 10 - File system & Device Drivers](38059-operating-systems-and-systems-programming/week-10-file-system-and-device-drivers.md)
 * [Page](page.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)

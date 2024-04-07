@@ -1,4 +1,4 @@
-# Week 5 OS Design Principles and System Calls
+# Week 5 - OS Design Principles and System Calls
 
 ### Operating System Description
 
@@ -210,11 +210,29 @@ Processes通过向OS kernel发起system call来与OS交互。为了稳定性，�
 * `linux/fs.h`文件列出了所有可对文件执行的操作。
 * 设备驱动至少实现了`open`、`read`、`write`和`close`这几个函数。
 
+#### 自动设备识别
+
+目前，我们已经看到了设备如何通过显式方式添加和使用
+
+而如今，设备的自动识别很重要。这需要适当的硬件支持。
+
+例如，每个设备响应唯一的vendor（制造商） id and product id当被探测（prbed）时。对于一些特定的devices（USB），设备还会响应种类（usb-storage）
+
+每个设备驱动程序都保留一个列表，列出它负责的设备和类型。
+
+所有的设备相关信息都在/sys文件系统下，是user space.
+
+kernel会跟踪这个信息：
+
+* 在OS中，一个kernel中的special program会在boot time遍历所有的驱动，记录下每个设备的id和类型。
+* 对于每个找到的device，kernel给userspace发送信息
+* userspace的特殊程序（udev）在/dev中生成对应的条目，加载合适的模块
+
 #### 设备分类
 
 内核还跟踪
 
-* 设备的物力依赖：例如链接到USB-hub上的设备
+* 设备的物理依赖：例如链接到USB-hub上的设备
 * 总线：处理器和一个或多个设备之间的通道。可以是物理的（例如pci，usb），也可以是逻辑的。
 * 设备类型：例如键盘，鼠标
 
@@ -238,6 +256,28 @@ Processes通过向OS kernel发起system call来与OS交互。为了稳定性，�
 仅在设备和适当内核缓冲区之间传输数据，并安排软件中断以启动底半部
 
 底半部仍在中断上下文中运行并完成剩余的处理（例如通过协议栈工作和唤醒进程）
+
+### 总结
+
+#### 内存管理
+
+* 管理有限资源十分重要
+* 每个进程需要隔离memory
+* 如果memory需求太高，那么需要swap
+* 通过查询paging和segmentation去达到这一点
+* 需要硬件支持
+
+#### 内核编程
+
+* 内核对所有资源都能访问
+* 和用户进程有分别的内存区域
+* 有两种内核代码。
+  * 处理终端的内核代码
+  * 通过system call为用户进程服务的
+
+#### 驱动
+
+驱动实现了open read write close with common structure.
 
 ### Practice Problems
 
