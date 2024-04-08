@@ -20,8 +20,8 @@ You can also come and check out my [blog](https://me.linlishi.xyz/post) to learn
 [30195-security-and-networks](30195-security-and-networks/)
 {% endcontent-ref %}
 
-{% content-ref url="34255-artificial-intelligence-2.md" %}
-[34255-artificial-intelligence-2.md](34255-artificial-intelligence-2.md)
+{% content-ref url="34255-artificial-intelligence-2/" %}
+[34255-artificial-intelligence-2](34255-artificial-intelligence-2/)
 {% endcontent-ref %}
 
 {% content-ref url="38059-operating-systems-and-systems-programming/" %}
