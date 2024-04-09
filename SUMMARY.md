@@ -15,6 +15,7 @@
   * [Week 1 - Intro & MLE](34255-artificial-intelligence-2/week-1-intro-and-mle.md)
   * [Week 2&3 - LR & Info Theory & Tree](34255-artificial-intelligence-2/week-2-and-3-lr-and-info-theory-and-tree.md)
   * [Week 4 - Bayesian Network](34255-artificial-intelligence-2/week-4-bayesian-network.md)
+  * [Week 8&9&10 Search & CSP & Game](34255-artificial-intelligence-2/week-8-and-9-and-10-search-and-csp-and-game.md)
 * [🐧 \[38059\] Operating Systems and Systems Programming](38059-operating-systems-and-systems-programming/README.md)
   * [Week 0 - Intro](38059-operating-systems-and-systems-programming/week-0-intro.md)
   * [Week 1 - Computer Architecture & C](38059-operating-systems-and-systems-programming/week-1-computer-architecture-and-c.md)
