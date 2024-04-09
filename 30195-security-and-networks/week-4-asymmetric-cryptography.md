@@ -105,6 +105,10 @@ Diffie-Hellman只有在只能被窃听的不可靠信道上才是安全的，如
 
 <figure><img src="../.gitbook/assets/image (19).png" alt="" width="563"><figcaption></figcaption></figure>
 
+{% hint style="warning" %}
+注意！这个流程是要背下来的！
+{% endhint %}
+
 ### RSA流程
 
 RSA包括了(Gen, Enc, Dec)
