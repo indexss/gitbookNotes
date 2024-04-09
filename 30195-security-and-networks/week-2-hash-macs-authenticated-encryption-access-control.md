@@ -2,7 +2,7 @@
 description: 本周内容比较多，但多数为intro类型
 ---
 
-# Week 2 - Hash, MACs, Encryption Intro, Access Control
+# Week 2 - Hash, MACs, Authenticated Encryption, Access Control
 
 {% hint style="info" %}
 目前，通过密钥分发协议和对称加密可以保证密钥是安全的，但是我们仍需要检测ciphertext manipulation。这时候，Hash，MACs和Authenticated Encryption就可以解决问题。
@@ -108,6 +108,18 @@ CBC MAC：
 <figure><img src="../.gitbook/assets/image (6) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (15) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+注意！\[LI Security and Networks 2022-23]
+
+看到最后一个块添加了len(m)。原因是会被攻击。
+
+假如我们的原信息m，被分为m0 .. mt-1块
+
+而我们有一个信息m'0, 满足m'0 != m0 但是hash(m0) == hash(m'0)，由于第一块不收到前面加密的约束，那么第一块就可以被替换，这样m'0 // m1 // .. //mt-1结合成的假信息m''和m就有相同的tag（MAC）。
+
+为什么加了一个len就可以解决呢？因为即使有m'0 != m0 hash(m0) == hash(m'0)的情况存在，但是很难有len(m'0) == len(m0)。所以多添加一层验证就能解决问题。
+{% endhint %}
 
 Hash MAC:
 
