@@ -11,6 +11,7 @@
   * [Week 7 - Web Attacks Part 1](30195-security-and-networks/week-7-web-attacks-part-1.md)
   * [Week 8 - Web Attacks Part 2](30195-security-and-networks/week-8-web-attacks-part-2.md)
   * [Week 9 - Reverse Engineering](30195-security-and-networks/week-9-reverse-engineering.md)
+  * [Week 10 - Buffer Overflow](30195-security-and-networks/week-10-buffer-overflow.md)
 * [🤖 \[34255\] Artificial Intelligence 2](34255-artificial-intelligence-2/README.md)
   * [Week 1 - Intro & MLE](34255-artificial-intelligence-2/week-1-intro-and-mle.md)
   * [Week 2&3 - LR & Info Theory & Tree](34255-artificial-intelligence-2/week-2-and-3-lr-and-info-theory-and-tree.md)
