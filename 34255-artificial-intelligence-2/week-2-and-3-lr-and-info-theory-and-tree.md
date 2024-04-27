@@ -45,9 +45,9 @@
 
 <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408183443514.png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408185956868.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408185956868.png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408190025306.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408190025306.png" alt="" width="375"><figcaption></figcaption></figure>
 
 <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408190039946.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -82,8 +82,54 @@ Information Theory研究的是如何量化信息。
 
 
     <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408194512571.png" alt="" width="375"><figcaption></figcaption></figure>
+*   Joint Entropy
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408235401299.png" alt="" width="375"><figcaption></figcaption></figure>
+
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408230109154.png" alt=""><figcaption></figcaption></figure>
+*   Conditional Entropy
+
+
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408230152830.png" alt=""><figcaption></figcaption></figure>
+*   Chain rule for conditional entropy
+
+
+
+
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408232607172.png" alt="" width="375"><figcaption></figcaption></figure>
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408235601302.png" alt="" width="375"><figcaption></figcaption></figure>
+*   Relative entropy (KL divergence)
+
+
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408232722286.png" alt="" width="375"><figcaption></figcaption></figure>
+*   Jensen-Shannon divergence （JSD）
+
+
+
+    <figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408233721710.png" alt="" width="375"><figcaption></figcaption></figure>
+*   Mutual Information
+
+    “measures the information that X and Y share”
+
+    它衡量的是对其中一个变量的了解程度能在多大程度上减少另一个变量的不确定性
+
+    互信息本质上衡量了使用P(X)P(Y)来建模联合概率P(X, Y)的距离（误差）。当X和Y彼此独立时，即p(x, y) = p(x)p(y) 互信息为0
+
+    I(X;Y) = I(Y;X)
+
+    ![image-20240409005531854](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409005531854.png)
+
+    ![image-20240408233854444](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408233854444.png)
+
+    ![image-20240408235216148](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408235216148.png)
+
+    ![image-20240408235349137](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408235349137.png)
+
+![image-20240408235401299](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408235401299.png)
 
 > 例1：正常硬币投掷正面朝上是0.5，不正常硬币是0.7。抛正常硬币为X，不正常硬币为Y
 >
@@ -130,15 +176,15 @@ Information Theory研究的是如何量化信息。
 
 拆分样本有两种方法。在CART中，用了Gini index
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409005034730.png" alt="" width="188"><figcaption></figcaption></figure>
+![image-20240409005034730](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409005034730.png)
 
 而在ID3算法和C4.5算法中用到了Information Gain, 其实就是mutual information
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409005357112.png" alt="" width="188"><figcaption></figcaption></figure>
+![image-20240409005357112](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409005357112.png)
 
 > 实例：使用Information Gain来构建决策树
 >
-> ![image-20240409005719889](file:///Users/linlishi/Library/Application%20Support/typora-user-images/image-20240409005719889.png?lastModify=1712601116)
+> ![image-20240409005719889](file:///Users/linlishi/Library/Application%20Support/typora-user-images/image-20240409005719889.png?lastModify=1714230909)
 >
 > 我们只研究其中的AB两个因素
 >
@@ -178,7 +224,7 @@ Information Theory研究的是如何量化信息。
 
 #### Mutual Information Feature Selection
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409013519743.png" alt=""><figcaption></figcaption></figure>
+![image-20240409013519743](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409013519743.png)
 
 在这个特征选择过程中，算法试图选择与目标变量 Y 最相关的 K 个特征。这个过程可以总结如下：
 
@@ -191,13 +237,13 @@ Information Theory研究的是如何量化信息。
 
 ### Exercise Question
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408223857945.png" alt="" width="563"><figcaption></figcaption></figure>
+![image-20240408223857945](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408223857945.png)
 
 > ![image-20240409013953863](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409013953863.png)
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408224455723.png" alt=""><figcaption></figcaption></figure>
+![image-20240408224455723](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408224455723.png)
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408224511254.png" alt=""><figcaption></figcaption></figure>
+![image-20240408224511254](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408224511254.png)
 
 > *   \-0.77 + 0.23\*0.5 - 1.18 = -1.835
 >
@@ -213,7 +259,7 @@ Information Theory研究的是如何量化信息。
 >
 >     从分析中我们可以向老板建议，顾客花费的时间越多，他们终止合同的可能性就越大，这意味着公司应该改善其电信服务/价格。然而，简单地说服他们订阅额外数据计划，则更有可能留下来。
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408225525204.png" alt=""><figcaption></figcaption></figure>
+![image-20240408225525204](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240408225525204.png)
 
 > 注意 C\_(100)^(55) == (下55上100)
 >
@@ -225,12 +271,10 @@ Information Theory研究的是如何量化信息。
 >
 > 55/p = 45/1-p -> 55-55p = 45p -> 100p = 55 -> p=0.55
 
-<figure><img src="https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409014026948.png" alt=""><figcaption></figcaption></figure>
+![image-20240409014026948](https://cdn.jsdelivr.net/gh/indexss/imagehost@main/img/image-20240409014026948.png)
 
 > (a1) 互信息背后的基本动机是衡量两个随机变量X和Y共享的信息。换句话说，它衡量了知道其中一个变量如何减少对另一个变量的不确定性。
 >
 > The basic motivation of mutual information is to measure the shared information between X and Y. In other words, it measures onces you know one variable, how much uncertainty reduced for another variable.
 >
 > (a2) The two lines in the loop are used to select K features. In this loop, we also find the feature fmax which achieves the maximum mutual information I among all the remaining independent variables in set F . However, because some features highly correlated with each other, selecting them will increase the number of features but does not improve the prediction. **Therefore, we need to make sure there must be minimal redundancy between the candidate feature Xi and the set of selected features S.** That's exactly the second term of the equation ( fmax) You then add this feature into S and then subtract it from set F and repeat until we got K features".
-
-\
