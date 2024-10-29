@@ -32,6 +32,7 @@
 * [Machine Learning](machine-learning/README.md)
   * [Intro](machine-learning/intro.md)
   * [Logistic Regression](machine-learning/logistic-regression.md)
+  * [SVM](machine-learning/svm.md)
 * [Page](page.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)
