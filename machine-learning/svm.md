@@ -46,3 +46,26 @@ SVM的输出直接就是标签-1，1，而不是像逻辑回归一样给你一�
 
 ## 求解SVM问题
 
+<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
