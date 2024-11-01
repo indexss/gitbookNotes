@@ -32,6 +32,10 @@ You can also come and check out my [blog](https://me.linlishi.xyz/post) to learn
 [26263-team-project.md](26263-team-project.md)
 {% endcontent-ref %}
 
+{% content-ref url="38965-machine-learning/" %}
+[38965-machine-learning](38965-machine-learning/)
+{% endcontent-ref %}
+
 ## 介绍
 
 {% hint style="info" %}

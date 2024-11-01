@@ -7,11 +7,11 @@
 在给定训练集T的情况下，学习一个mapping，由输入X映射到输出y。\
 
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 那么下图就说明了一个有监督学习的所有组件：
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 别的都好说，这个Hypothesis Set是什么呢？其实就是所选定的函数型，比如线形之类的。为什么有这玩意呢？因为传统的机器学习方法基本都是给定一个函数型，然后去学习里面每个w的大小，组合出一个完整的映射，来看性能。如果类比到深度学习里面，其实hypothesis set就是网络，比如说CNN，Transformer，RNN之类的，你先挑一个网络，然后进行梯度下降，最后比较精度。
 
@@ -19,7 +19,7 @@
 
 给定一个训练集，训练集怎么来的呢？从所有样本中，以一种未知但固定的概率从中独立同分布地抽出来的。目标是学习一个可泛化在未看见过的样本上的映射。
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 逻辑回归
 
@@ -70,7 +70,7 @@ h是什么呢？h就是ln(p/1-p), 这玩意范围在-无穷，+无穷，对上�
 
 这玩意如果进行一下数学推导，其实就是交叉熵loss, Cross Entropy Loss.
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 怎么推导的呢？首先y为概率，且为二分分布，所以输出只有两种，y和1-y
 
