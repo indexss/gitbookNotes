@@ -37,6 +37,7 @@
   * [Linear Models](32167-neural-computation/linear-models.md)
   * [GD & Linear Classification](32167-neural-computation/gd-and-linear-classification.md)
   * [Backpropagation](32167-neural-computation/backpropagation.md)
+  * [CNN](32167-neural-computation/cnn.md)
 * [😂 \[26263\] Team Project](26263-team-project.md)
 * [📜 Paper Reading](paper-reading/README.md)
   * [🔴 Towards End-to-end Video-based Eye-Tracking](paper-reading/towards-end-to-end-video-based-eye-tracking.md)

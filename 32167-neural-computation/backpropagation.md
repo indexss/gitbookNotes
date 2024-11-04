@@ -68,7 +68,7 @@ Chain Rule没啥好说的，就是链式求导。f(g(x))对x的导数就是f'(g(
 
 <figure><img src="../.gitbook/assets/image (108).png" alt="" width="563"><figcaption></figcaption></figure>
 
-### Loss Function
+## Loss Function
 
 这里介绍几种常用的Loss Function
 
