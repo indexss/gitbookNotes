@@ -4,6 +4,14 @@ description: Welcome to Linli's note.
 
 # 👋 Welcome 欢迎
 
+{% hint style="warning" %}
+## <mark style="background-color:red;">本网站整体迁移到知识库</mark> [https://base.linlishi.xyz/](https://base.linlishi.xyz/)
+
+## <mark style="background-color:red;">本网站内容将不再更新，整体Archive。请移步知识库！</mark>
+{% endhint %}
+
+
+
 ## Intro
 
 {% hint style="info" %}
